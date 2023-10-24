@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PERFIL LINKG</title>
+
+</head>
+
+<body>
+     <header class="flex center">
+        
+        <div class="container">
+            
+            <div class="header_content space-between align-center">
+
+                <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
+
+                <nav>
+
+                    <ul class="header_menu flex">
+
+                        <li>
+                            <a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/home.html" class="header_icon" href="">
+                                <i class="fa-solid fa-house"></i>
+                                <p>HOME</p>
+                            </a>
+                        </li>
+
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
+
+                    </ul>
+
+                </nav>
+            
+            </div><!--Header Content-->
+
+        </div><!--Container-->
+
+    </header>
+
+    <h1 class="flex center">  
+        PROGRAMAÇÃO
+    </h1>
+
+    <br>
+
+    <hr>
+
+    <div class="flex center">
+        <div class="perfil_container_center">
+            <div class="circulo">
+                <img class="perfil_foto" id="perfilFoto" src="./images/velha.png" alt="Foto de perfil" onclick="selectFoto()" style="cursor: pointer;">
+                <input type="file" id="fotoInput" accept="image/*" style="display: none;" onchange="updateFoto()" />
+            </div>
+        </div>
+    </div>
+
+    <h1 class="flex center">
+        DADOS PESSOAIS
+    </h1>
+
+    <div class="dados-pessoais">
+        <form id="dadosForm">
+            <label for="nome">NOME:</label>
+            <input type="text" id="nome" value="SEU NOME" required disabled>
+            <label for="idade">IDADE:</label>
+            <input type="number" id="idade" value="SUA IDADE" required disabled>
+            <label for="interesses">INTERESSES:</label>
+            <textarea id="interesses" required disabled>SEUS INTERESSES</textarea>
+            <button type="button" id="editarFotoBtn" style="display: none;" onclick="editarFoto()">EDITAR FOTO</button>
+            <button type="button" id="editarBtn" onclick="editarDados()">EDITAR</button>
+        </form>
+    </div>
+
+    <script>
+        function selectFoto() {
+            var editarBtn = document.getElementById("editarBtn");
+            if (editarBtn.textContent === "SALVAR") {
+                var fotoInput = document.getElementById("fotoInput");
+                fotoInput.click();
+            }
+        }
+
+        function updateFoto() {
+            var fotoInput = document.getElementById("fotoInput");
+            var perfilFoto = document.getElementById("perfilFoto");
+
+            if (fotoInput.files && fotoInput.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    perfilFoto.src = e.target.result;
+                };
+
+                reader.readAsDataURL(fotoInput.files[0]);
+            }
+        }
+
+        function editarDados() {
+            var nomeInput = document.getElementById("nome");
+            var idadeInput = document.getElementById("idade");
+            var interessesInput = document.getElementById("interesses");
+            var editarBtn = document.getElementById("editarBtn");
+            var editarFotoBtn = document.getElementById("editarFotoBtn");
+
+            if (editarBtn.textContent === "EDITAR") {
+                // Habilitar campos para edição
+                nomeInput.disabled = false;
+                idadeInput.disabled = false;
+                interessesInput.disabled = false;
+                editarBtn.textContent = "SALVAR";
+                editarBtn.style.backgroundColor = "green";
+                editarFotoBtn.style.display = "block";
+            } else {
+                // Desabilitar campos após salvar as edições
+                nomeInput.disabled = true;
+                idadeInput.disabled = true;
+                interessesInput.disabled = true;
+                editarBtn.textContent = "EDITAR";
+                editarBtn.style.backgroundColor = "rgb(97, 24, 97)";
+                editarFotoBtn.style.display = "none";
+            }
+        }
+
+        function editarFoto() {
+            var fotoInput = document.getElementById("fotoInput");
+            fotoInput.click();
+        }
+    </script>
+</body>
+</html>

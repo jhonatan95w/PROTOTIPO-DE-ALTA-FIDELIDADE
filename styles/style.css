@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #35155D;
+}
+
+header{
+    background-color: #512B81;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 85%;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.header_content{
+    width: 100%;
+    padding: 16px;
+    display: flex;
+}
+
+.logo{
+    width: 80px;
+    height: 80px;
+}
+
+.header_menu{
+    gap: 90px;
+}
+
+.header_icon{
+    display: inline-block;
+    vertical-align: middle;
+    color:whitesmoke;
+    font-size: 36px;
+    transition: 0.5s all;
+}
+
+.header_icon p {
+    font-size: 50; /* Isso adiciona um pequeno espaço entre o ícone e o texto. Ajuste conforme necessário. */
+}
+
+.header_icon:hover{
+    font-size: 42px;
+    color: #8CABFF;
+}
+
+hr {
+    border: none; 
+    height: 2px; 
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.event-box {
+    display: inline-block;
+    background-color:#512B81; /* Cor de fundo desejada */
+    color: white; /* Cor do texto */
+    padding: 320px; /* Espaçamento interno para o conteúdo */
+    border-radius: 60px; /* Cantos arredondados */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    width: 1280px;
+    height: 680px;
+    font-size: 80px;
+}
+
+.perfil_container{
+    width: 95%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+}
+
+.perfil_container_center{
+    width: 95%;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.perfil_foto{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 140px;
+}
+
+
+.circulo {
+    display: inline-block;
+    border: 6px solid black;
+    background: rgb(230, 173, 216);
+    border-radius: 50%;
+    width: 165px;
+    height: 170px;
+}
+
+h1 {
+    color: white;
+    margin-top: 50px;
+    font-size: 48px;
+}
+
+.dados-pessoais {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.dados-pessoais label {
+    color:white;
+    font-weight: bold;
+    font-size: 40px;
+    display: block; /* Coloca cada rótulo em uma nova linha */
+    margin-top: 50px; /* Espaçamento entre rótulos */
+}
+
+.dados-pessoais input[type="text"],
+.dados-pessoais input[type="number"],
+.dados-pessoais textarea {
+    font-weight: bold;
+    font-size: 36px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento entre campos */
+    color: black; /* Cor do texto para quando os campos estão habilitados */
+}
+
+.dados-pessoais button {
+    background-color: rgb(97, 24, 97); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; /* Coloca o botão em uma nova linha */
+    margin: 0 auto; /* Centraliza o botão */
+}
+
+.perfil_nome {
+    font-size:48px;
+    color:white;
+    display: inline-block;
+}
+
+.comentario {
+    font-size:38px;
+    color:grey;
+    display: inline-block;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 200px 1000px ;
+    grid-template-rows: 90px ;
+}
+
+.events {
+    width: 600px;
+    height: 400px;
+}
+
+
+.details-button {
+    background-color:purple;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.details-section {
+    font-size: 20px;
+    display: none;
+    background-color:#512B81;
+    padding: 10px;
+    border: 1px solid black;
+    color:#fff;
+    font-family: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Isso garante que o botão ocupe toda a altura do contêiner */
+}
+
+.perfil_foto {
+    cursor: pointer;
+}
+
+.fotos{
+    width: 1600px;
+    height: 800px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+

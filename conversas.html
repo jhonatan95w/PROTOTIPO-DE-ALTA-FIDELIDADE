@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilos para a barra de pesquisa */
+        input#searchInput {
+            font-size: 60px;
+            width: 60%;
+            padding: 50px;
+            border: 1px solid black;
+            background-color: gray;
+            border-radius: 20px;
+            font-size: 28px;
+            margin-bottom: 10px;
+
+        }
+
+        input#searchInput::placeholder {
+            color: #fff; /* Cor do texto em branco para o espaço reservado */
+            font-size:28px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CONVERSAS LINKG</title>
+</head>
+<body>
+    <header class="flex center">
+        
+        <div class="container">
+            
+            <div class="header_content space-between align-center">
+
+                <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
+
+                <nav>
+
+                    <ul class="header_menu flex">
+
+                        <li>
+                            <a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/home.html" class="header_icon" href="">
+                                <i class="fa-solid fa-house"></i>
+                                <p>HOME</p>
+                            </a>
+                        </li>
+
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
+
+                    </ul>
+
+                </nav>
+            
+            </div><!--Header Content-->
+
+        </div><!--Container-->
+
+    </header>
+
+    <br>
+
+    <div class="flex center">
+        <img class="logo" src="./images/lupa.png" alt="Lupa">
+        <input type="text" id="searchInput" placeholder="Pesquisar contatos..." onkeyup="filterContacts()">
+        <img class="logo" src="./images/botao-mais.png" alt="mais">
+    </div>
+
+
+    <h1 class="flex center">
+        
+        CONVERSAS
+    </h1>
+
+    <br>
+
+    <hr>
+
+    <div class="flex center">
+        <div class="perfil_container wrapper">
+            <div class="circulo align-center">
+                <img class="perfil_foto" src="./images/velha (1).png" alt="Foto de perfil">
+            </div>
+            <p class="perfil_nome">EDNA</p>
+            <p></p>
+            <p class="comentario"> Você: Edna vamos hoje para o evento que vai acontecer em</p>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="flex center">
+        <div class="perfil_container wrapper">
+            <div class="circulo align-center">
+                <img class="perfil_foto" src="./images/idoso.png" alt="Foto de perfil">
+            </div>
+            <p class="perfil_nome">CARLOS</p>
+            <p></p>
+            <p class="comentario"> Carlos: Hoje vou de carro para o evento</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="flex center">
+        <div class="perfil_container wrapper">
+            <div class="circulo align-center">
+                <img class="perfil_foto" src="./images/idosos.png" alt="Foto de perfil">
+            </div>
+            <p class="perfil_nome">JOSÉ</p>
+            <p></p>
+            <p class="comentario"> Você: compartilhou um evento</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="flex center">
+        <div class="perfil_container wrapper">
+            <div class="circulo align-center">
+                <img class="perfil_foto" src="./images/homem.png" alt="Foto de perfil">
+            </div>
+            <p class="perfil_nome">JOAQUIM</p>
+            <p></p>
+            <p class="comentario"> Você: compartilhou um evento</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <script>
+        function filterContacts() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toLowerCase();
+            var perfilContainers = document.getElementsByClassName("perfil_container");
+
+            for (var i = 0; i < perfilContainers.length; i++) {
+                var perfilNome = perfilContainers[i].getElementsByClassName("perfil_nome")[0];
+                var comentario = perfilContainers[i].getElementsByClassName("comentario")[0];
+
+                if (perfilNome.textContent.toLowerCase().includes(filter) || comentario.textContent.toLowerCase().includes(filter)) {
+                    perfilContainers[i].style.display = "block";
+                } else {
+                    perfilContainers[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>HOME LINKG</title>
+
+    <style>
+        .red {
+            color: red; /* Define a cor vermelha para o ícone */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="flex center">
+        
+        <div class="container">
+            
+            <div class="header_content space-between align-center">
+
+                <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
+
+                <nav>
+
+                    <ul class="header_menu flex">
+
+                        <li>
+                            <a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/home.html" class="header_icon" href="">
+                                <i class="fa-solid fa-house"></i>
+                                    <p>HOME</p>
+                            </a>
+                        </li>
+
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
+
+                    </ul>
+
+                </nav>
+            
+            </div><!--Header Content-->
+
+        </div><!--Container-->
+
+    </header>
+    
+    <hr><hr>
+
+    <br><br>
+
+    <div class="flex center">
+        <a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/eventos.html" class="event-box flex center">
+            <p>EVENTOS</p>
+        </a>
+    </div>
+    
+
+    <br><br>
+    <hr><hr>
+    <br><br>
+
+    <div class="flex center">
+        <div class="perfil_container">
+            <div class="circulo align-center">
+                <img class="perfil_foto" src="./images/velha.png" alt="Logo da Rede Social">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex center">
+        <div class="event-box " >
+            <div class="flex center">
+                    <p>FOTO</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr><hr>
+
+    
+    <div class="flex center">
+        <div class="perfil_container">
+            <div class="circulo align-center">
+                <div class="header_content space-between align-center">
+                    <img id="heart-icon" class="perfil_foto" src="./images/idoso.png" alt="Logo da Rede Social">
+                    <nav>
+
+                        <ul class="header_menu flex">
+    
+                            <li>
+                                <img class="logo" src="./images/silhueta-de-formato-simples-de-coracao.png" alt="Logo da Rede Social">
+                            </li>
+    
+            
+                        </ul>
+    
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex center">
+        <div class="event-box " >
+            <div class="flex center">
+                    <p>FOTO</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr><hr>
+
+    <header class="flex">
+        <div class="container flex">
+            <img class="logo" src="./images/botao-mais.png" alt="Logo da Rede Social">
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heartIcon = document.getElementById("heart-icon");
+    
+            // Adicione um ouvinte de evento de clique ao ícone do coração
+            heartIcon.addEventListener("click", function () {
+                // Verifique se o ícone do coração tem a classe "red" (vermelho)
+                if (heartIcon.classList.contains("red")) {
+                    // Se tiver, remova a classe "red" para torná-lo preto
+                    heartIcon.classList.remove("red");
+                } else {
+                    // Caso contrário, adicione a classe "red" para torná-lo vermelho
+                    heartIcon.classList.add("red");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

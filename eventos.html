@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .purple-button {
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .green-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>PERFIL LINKG</title>
+</head>
+
+<body>
+    <header class="flex center">
+        <div class="container">
+            <div class="header_content space-between align-center">
+                <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
+                <nav>
+                    <ul class="header_menu flex">
+                        <li>
+                            <a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/home.html" class="header_icon" href="">
+                                <i class="fa-solid fa-house"></i>
+                                <p>HOME</p>
+                            </a>
+                        </li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
+                        <li><a href="file:///C:/Users/jhona/OneDrive/Documents/Prototipo/perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
+                    </ul>
+                </nav>
+            </div><!--Header Content-->
+        </div><!--Container-->
+    </header>
+
+    <div class="event">
+        <h1 class="flex center">  
+            LINKG 17/10 18H
+        </h1>
+        <div class="flex">
+            <img class="events" src="./images/cdb5c30b-0f4d-454d-93fa-7ef16dfcdc2f.png" alt="Logo da Rede Social">
+        </div>
+        <br>
+        <div class="button-container">
+            <button class="purple-button" id="button1" onclick="toggleButton(1)">Participar</button>
+        </div>
+
+    </div>
+
+    <div class="event">
+        <h1 class="flex center">  
+            FEST 18/10 18H
+        </h1>
+        <div class="flex">
+            <img class="events" src="./images/5a52d181-3ecd-4127-bfc9-25b8318dd880.png" alt="Logo da Rede Social">
+        </div>
+        <br>
+        <div class="button-container">
+            <button class="purple-button" id="button2" onclick="toggleButton(2)">Participar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleButton(eventId) {
+            const button = document.getElementById(`button${eventId}`);
+            if (button.textContent === 'Participar') {
+                button.textContent = 'Inscrito';
+                button.classList.remove('purple-button');
+                button.classList.add('green-button');
+            } else {
+                button.textContent = 'Participar';
+                button.classList.remove('green-button');
+                button.classList.add('purple-button');
+            }
+        }
+    </script>
+</body>
+</html>
