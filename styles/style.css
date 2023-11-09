@@ -61,6 +61,7 @@ a{
 }
 
 .header_icon{
+    margin-right: 10px;
     display: inline-block;
     vertical-align: middle;
     color:whitesmoke;
@@ -68,14 +69,52 @@ a{
     transition: 0.5s all;
 }
 
+
 .header_icon p {
     font-size: 50; /* Isso adiciona um pequeno espaço entre o ícone e o texto. Ajuste conforme necessário. */
+}
+
+.mud_icon{
+    color:#24044b;
+}
+
+.icon_pesq{
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    color:#dfd6ff;
+    font-size: 60px;
+    transition: 0.5s all;
+}
+
+.icon_add{
+    display: inline-block;
+    vertical-align: middle;
+    color:#dfd6ff;
+    font-size: 60px;
+    transition: 0.5s all;
 }
 
 .header_icon:hover{
     font-size: 42px;
     color: #8CABFF;
 }
+
+.word{
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    color:whitesmoke;
+    font-size: 120px;
+    transition: 0.5s all;
+}
+
+.word:hover{
+    font-size: 130px;
+    color: #8CABFF;
+}
+
+
 
 hr {
     border: none; 
@@ -88,7 +127,7 @@ hr {
 .event-box {
     display: inline-block;
     background-color:#512B81; /* Cor de fundo desejada */
-    color: white; /* Cor do texto */
+    color: #dfd6ff; /* Cor do texto */
     padding: 320px; /* Espaçamento interno para o conteúdo */
     border-radius: 60px; /* Cantos arredondados */
     text-align: center; /* Centraliza o texto horizontalmente */
@@ -128,7 +167,7 @@ hr {
 }
 
 h1 {
-    color: white;
+    color: #dfd6ff;
     margin-top: 50px;
     font-size: 48px;
 }
@@ -142,7 +181,7 @@ h1 {
 }
 
 .dados-pessoais label {
-    color:white;
+    color:#dfd6ff;
     font-weight: bold;
     font-size: 40px;
     display: block; /* Coloca cada rótulo em uma nova linha */
@@ -162,7 +201,7 @@ h1 {
 
 .dados-pessoais button {
     background-color: rgb(97, 24, 97); 
-    color: white;
+    color: #dfd6ff;
     padding: 10px 20px;
     border: none;
     font-size: 24px;
@@ -174,7 +213,7 @@ h1 {
 
 .perfil_nome {
     font-size:48px;
-    color:white;
+    color:#dfd6ff;
     display: inline-block;
 }
 
@@ -198,7 +237,7 @@ h1 {
 
 .details-button {
     background-color:purple;
-    color: #fff;
+    color: #dfd6ff;
     padding: 10px;
     font-size: 20px;
     border: none;
@@ -211,7 +250,7 @@ h1 {
     background-color:#512B81;
     padding: 10px;
     border: 1px solid black;
-    color:#fff;
+    color:#dfd6ff;
     font-family: bold;
 }
 
@@ -231,14 +270,3 @@ h1 {
     height: 800px;
     display: inline-block;
 }
-
-
-
-
-
-
-
-
-
-
-
