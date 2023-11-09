@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .purple-button {
+        .button-container {
+            display: flex;
+            gap: 10px; /* Define a separação entre os botões */
+        }
+
+        .purple-button,
+        .cancel-button {
             background-color: purple;
             color: white;
             padding: 10px 20px;
@@ -21,6 +27,34 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Adiciona estilos para o aviso de desinscrição */
+        #aviso-desinscrever {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #512B81; /* Tonalidade de rosa pálido */
+            border: 3px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            z-index: 9999;
+            width: 400px;
+            text-align: center;
+            color: white;
+        }
+
+        #aviso-desinscrever button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #333333; /* Tonalidade mais escura para o botão */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
     <title>PERFIL LINKG</title>
 </head>
@@ -30,14 +64,18 @@
         <div class="container">
             <div class="header_content space-between align-center">
                 <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
+
                 <nav>
+
                     <ul class="header_menu flex">
+
                         <li>
                             <a href="index.html" class="header_icon" href="">
                                 <i class="fa-solid fa-house"></i>
-                                <p>HOME</p>
+                                    <p>HOME</p>
                             </a>
                         </li>
+
                         <li><a href="conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
                         <li><a href="agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
                         <li><a href="perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
@@ -57,8 +95,8 @@
         <br>
         <div class="button-container">
             <button class="purple-button" id="button1" onclick="toggleButton(1)">Participar</button>
+            <button class="cancel-button" id="cancelButton1" style="display: none;" onclick="abrirAvisoDesinscrever(1)">Desinscrever</button>
         </div>
-
     </div>
 
     <div class="event">
@@ -71,20 +109,61 @@
         <br>
         <div class="button-container">
             <button class="purple-button" id="button2" onclick="toggleButton(2)">Participar</button>
+            <button class="cancel-button" id="cancelButton2" style="display: none;" onclick="abrirAvisoDesinscrever(2)">Desinscrever</button>
         </div>
     </div>
 
+    <!-- Adiciona o aviso de desinscrição -->
+    <div id="aviso-desinscrever">
+        <p>Tem certeza de que deseja desinscrever?</p>
+        <button onclick="confirmarDesinscricao()">Confirmar</button>
+        <button onclick="fecharAvisoDesinscrever()">Cancelar</button>
+    </div>
+
     <script>
+        function abrirAvisoDesinscrever(eventId) {
+            const avisoDesinscrever = document.getElementById("aviso-desinscrever");
+            avisoDesinscrever.dataset.eventId = eventId; // Armazenar o ID do evento no aviso
+            avisoDesinscrever.style.display = "block";
+        }
+
+        function fecharAvisoDesinscrever() {
+            const avisoDesinscrever = document.getElementById("aviso-desinscrever");
+            avisoDesinscrever.style.display = "none";
+        }
+
+        function confirmarDesinscricao() {
+            const eventId = document.getElementById("aviso-desinscrever").dataset.eventId;
+
+
+
+            // Alterar o botão de volta para "Participar"
+            const button = document.getElementById(`button${eventId}`);
+            const cancelButton = document.getElementById(`cancelButton${eventId}`);
+            
+            button.textContent = 'Participar';
+            button.classList.remove('green-button');
+            button.classList.add('purple-button');
+            cancelButton.style.display = 'none';
+
+            // Fechar a janela de aviso para desinscrever
+            fecharAvisoDesinscrever();
+        }
+
         function toggleButton(eventId) {
             const button = document.getElementById(`button${eventId}`);
+            const cancelButton = document.getElementById(`cancelButton${eventId}`);
+            
             if (button.textContent === 'Participar') {
                 button.textContent = 'Inscrito';
                 button.classList.remove('purple-button');
                 button.classList.add('green-button');
+                cancelButton.style.display = 'block';
             } else {
                 button.textContent = 'Participar';
                 button.classList.remove('green-button');
                 button.classList.add('purple-button');
+                cancelButton.style.display = 'none';
             }
         }
     </script>
