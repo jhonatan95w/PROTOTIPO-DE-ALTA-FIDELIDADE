@@ -6,16 +6,53 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PERFIL LINKG</title>
-
+    <style>
+        /* Adiciona estilos para o aviso */
+        #aviso {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #512B81; /* Tonalidade de rosa pálido */
+            border: 3px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            z-index: 9999;
+            width: 600px;
+            height: 200px;
+        }
+    
+        #aviso p {
+            margin: 0;
+            color: white; /* Cor do texto (não muito escura para boa legibilidade) */
+            font-size: 36px;
+        }
+    
+        #aviso-btns {
+            margin-top: 10px;
+            text-align: center;
+        }
+    
+        #aviso-btns button {
+            margin: 3px;
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #333333; /* Tonalidade mais escura para o botão */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    
+    
 </head>
 
 <body>
-     <header class="flex center">
-        
+    <header class="flex center">
         <div class="container">
-            
             <div class="header_content space-between align-center">
-
                 <img class="logo" src="./images/logo.png" alt="Logo da Rede Social">
 
                 <nav>
@@ -32,24 +69,11 @@
                         <li><a href="conversas.html" class="header_icon" href=""><i class="fa-solid fa-message"></i><p>CONVERSAS</p></a></li>
                         <li><a href="agenda.html" class="header_icon" href=""><i class="fa-solid fa-calendar-days"></i><p>AGENDA</p></a></li>
                         <li><a href="perfil.html" class="header_icon" href=""><i class="fa-solid fa-user"></i><p>PERFIL</p></a></li>
-
                     </ul>
-
                 </nav>
-            
             </div><!--Header Content-->
-
         </div><!--Container-->
-
     </header>
-
-    <h1 class="flex center">  
-        PROGRAMAÇÃO
-    </h1>
-
-    <br>
-
-    <hr>
 
     <div class="flex center">
         <div class="perfil_container_center">
@@ -77,6 +101,12 @@
         </form>
     </div>
 
+    <!-- Adiciona o aviso -->
+    <div id="aviso">
+        <div id="aviso-conteudo"></div>
+        <div id="aviso-btns"></div>
+    </div>
+
     <script>
         function selectFoto() {
             var editarBtn = document.getElementById("editarBtn");
@@ -101,6 +131,42 @@
             }
         }
 
+        function exibirAviso(mensagem, callback) {
+            // Criar o elemento de aviso
+            var avisoElement = document.getElementById("aviso");
+            var avisoConteudo = document.getElementById("aviso-conteudo");
+            var avisoBtns = document.getElementById("aviso-btns");
+
+            // Adicionar mensagem ao conteúdo do aviso
+            avisoConteudo.innerHTML = "<p>" + mensagem + "</p>";
+
+            // Exibir o aviso
+            avisoElement.style.display = "block";
+
+            // Adicionar botões de ação ao aviso (opcional)
+            avisoBtns.innerHTML = '<button onclick="fecharAviso(true)">OK</button>' +
+                                  '<button onclick="fecharAviso(false)">Cancelar</button>';
+
+            // Se fornecido um callback, chamá-lo com true quando o usuário clicar em "OK"
+            if (callback) {
+                avisoBtns.firstChild.addEventListener("click", function () {
+                    callback(true);
+                });
+            }
+        }
+
+        function fecharAviso(confirmado) {
+            var avisoElement = document.getElementById("aviso");
+            avisoElement.style.display = "none";
+
+            // Executar ação com base na resposta do usuário (opcional)
+            if (confirmado) {
+                // Código a ser executado se o usuário confirmar
+            } else {
+                // Código a ser executado se o usuário cancelar
+            }
+        }
+
         function editarDados() {
             var nomeInput = document.getElementById("nome");
             var idadeInput = document.getElementById("idade");
@@ -118,12 +184,18 @@
                 editarFotoBtn.style.display = "block";
             } else {
                 // Desabilitar campos após salvar as edições
-                nomeInput.disabled = true;
-                idadeInput.disabled = true;
-                interessesInput.disabled = true;
-                editarBtn.textContent = "EDITAR";
-                editarBtn.style.backgroundColor = "rgb(97, 24, 97)";
-                editarFotoBtn.style.display = "none";
+                // Adicionar a chamada para exibir o aviso
+                exibirAviso("Tem certeza de que deseja salvar as alterações?", function (confirmado) {
+                    if (confirmado) {
+                        nomeInput.disabled = true;
+                        idadeInput.disabled = true;
+                        interessesInput.disabled = true;
+                        editarBtn.textContent = "EDITAR";
+                        editarBtn.style.backgroundColor = "rgb(97, 24, 97)";
+                        editarFotoBtn.style.display = "none";
+                        fecharAviso(true); // Fechar o aviso
+                    }
+                });
             }
         }
 
