@@ -8,11 +8,6 @@
 
     <title>HOME LINKG</title>
 
-    <style>
-        .red {
-            color: red; /* Define a cor vermelha para o ícone */
-        }
-    </style>
 </head>
 <body>
 
@@ -55,7 +50,7 @@
 
     <div class="flex center">
         <a href="eventos.html" class="event-box flex center">
-            <p>EVENTOS</p>
+            <p class="word">EVENTOS</p>
         </a>
     </div>
     
@@ -81,31 +76,16 @@
         </div>
     </div>
 
-    <br>
+    <br><br><br><br><br><br>
     <hr><hr>
 
     
     <div class="flex center">
         <div class="perfil_container">
             <div class="circulo align-center">
-                <div class="header_content space-between align-center">
                     <img id="heart-icon" class="perfil_foto" src="./images/idoso.png" alt="Logo da Rede Social">
-                    <nav>
-
-                        <ul class="header_menu flex">
-    
-                            <li>
-                                <img class="logo" src="./images/silhueta-de-formato-simples-de-coracao.png" alt="Logo da Rede Social">
-                            </li>
-    
-            
-                        </ul>
-    
-                    </nav>
-                </div>
             </div>
         </div>
-
     </div>
 
     <div class="flex center">
@@ -116,31 +96,10 @@
         </div>
     </div>
 
-    <br>
+
+    <br><br><br><br><br>
     <hr><hr>
 
-    <header class="flex">
-        <div class="container flex">
-            <img class="logo" src="./images/botao-mais.png" alt="Logo da Rede Social">
-        </div>
-    </header>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const heartIcon = document.getElementById("heart-icon");
     
-            // Adicione um ouvinte de evento de clique ao ícone do coração
-            heartIcon.addEventListener("click", function () {
-                // Verifique se o ícone do coração tem a classe "red" (vermelho)
-                if (heartIcon.classList.contains("red")) {
-                    // Se tiver, remova a classe "red" para torná-lo preto
-                    heartIcon.classList.remove("red");
-                } else {
-                    // Caso contrário, adicione a classe "red" para torná-lo vermelho
-                    heartIcon.classList.add("red");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
